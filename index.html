@@ -11,20 +11,20 @@
 <style>
 /* Layout: planted-rows hero band, then alternating field/soil sections; one column on phones */
 :root{
-  --bg:#F2F5EE; --surface:#FFFFFF; --ink:#16241B; --muted:#55665B;
-  --green:#1E5A36; --green-deep:#123A23; --sage:#DCE7D6; --maize:#B98A12; --line:#C9D6C4;
-  --on-green:#F2F5EE;
+  --bg:#F5F3EE; --surface:#FFFFFF; --ink:#16241B; --muted:#55665B;
+  --green:#1E5A36; --green-deep:#173B27; --sage:#EFE7DC; --maize:#A4532B; --line:#DDD6CA;
+  --on-green:#F5F3EE;
   --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --f-body:"Public Sans", "Segoe UI", system-ui, sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#0E1712; --surface:#15221A; --ink:#E6EEE5; --muted:#9DB0A2;
-  --green:#5DBB7E; --green-deep:#0B2416; --sage:#1C2E22; --maize:#E2B740; --line:#2A3D30;
+  --green:#5DBB7E; --green-deep:#0B2416; --sage:#2A241D; --maize:#E08A5A; --line:#2A3D30;
   --on-green:#E6EEE5; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0E1712; --surface:#15221A; --ink:#E6EEE5; --muted:#9DB0A2;
-  --green:#5DBB7E; --green-deep:#0B2416; --sage:#1C2E22; --maize:#E2B740; --line:#2A3D30;
+  --green:#5DBB7E; --green-deep:#0B2416; --sage:#2A241D; --maize:#E08A5A; --line:#2A3D30;
   --on-green:#E6EEE5; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -40,30 +40,30 @@ a{color:inherit}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--green-deep)}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--green-deep);color:var(--on-green)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.1rem;color:#F2F5EE}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.1rem;color:#F5F3EE}
 .mark{width:34px;height:34px;flex:none}
 nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{text-decoration:none;font-size:.92rem;color:#CFE0CF}
+nav a{text-decoration:none;font-size:.92rem;color:#D3DED2}
 nav a:hover{color:#FFFFFF}
 
 /* hero */
-.hero{position:relative;background:var(--green-deep);color:#F2F5EE;overflow:hidden}
+.hero{position:relative;background:var(--green-deep);color:#F5F3EE;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;
-  background:repeating-linear-gradient(170deg,transparent 0 22px,rgba(185,138,18,.18) 22px 24px);
+  background:repeating-linear-gradient(170deg,transparent 0 22px,rgba(196,104,58,.24) 22px 24px);
   -webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);pointer-events:none}
 .hero .wrap{position:relative;z-index:1;padding-block:72px 88px;display:grid;gap:28px}
 .hero h1{font-size:clamp(2.3rem,6vw,4.2rem);font-weight:800;max-width:15ch;letter-spacing:-.02em}
-.hero h1 em{font-style:normal;color:#E2B740}
-.hero p.lead{font-size:1.12rem;max-width:58ch;color:#CFE0CF}
-.hero .eyebrow{color:#9FC3A8}
+.hero h1 em{font-style:normal;color:#E08A5A}
+.hero p.lead{font-size:1.12rem;max-width:58ch;color:#D3DED2}
+.hero .eyebrow{color:#A9C4AE}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:600}
-.btn-maize{background:#E2B740;color:#16241B}
-.btn-maize:hover{background:#F0C95A}
-.btn-ghost{border-color:#5E8C6B;color:#F2F5EE;background:transparent}
-.btn-ghost:hover{border-color:#F2F5EE}
+.btn-maize{background:#C4683A;color:#FFFFFF}
+.btn-maize:hover{background:#D47848}
+.btn-ghost{border-color:#6B8F74;color:#F5F3EE;background:transparent}
+.btn-ghost:hover{border-color:#F5F3EE}
 .area{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.area span{font-family:var(--f-mono);font-size:.8rem;padding:4px 10px;border:1px solid #3F6B4C;border-radius:999px;color:#CFE0CF}
+.area span{font-family:var(--f-mono);font-size:.8rem;padding:4px 10px;border:1px solid #3F6B4C;border-radius:999px;color:#D3DED2}
 
 /* sections */
 section{padding-block:72px}
@@ -120,9 +120,9 @@ textarea{min-height:96px;resize:vertical}
 .out pre{white-space:pre-wrap;font-family:var(--f-mono);font-size:.85rem;background:var(--sage);padding:14px;border-radius:6px;margin:0;user-select:all}
 .note{font-size:.85rem;color:var(--muted)}
 
-footer{background:var(--green-deep);color:#CFE0CF}
+footer{background:var(--green-deep);color:#D3DED2}
 footer .wrap{padding-block:36px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.9rem}
-footer strong{color:#F2F5EE;font-family:var(--f-display)}
+footer strong{color:#F5F3EE;font-family:var(--f-display)}
 
 @media (max-width:860px){
   .services,.work,.quote{grid-template-columns:1fr}
@@ -146,10 +146,10 @@ footer strong{color:#F2F5EE;font-family:var(--f-display)}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Lesego Laka Projects home">
       <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
-        <rect width="40" height="40" rx="8" fill="#1E5A36"/>
-        <path d="M8 30c6-2 10-2 12-2s6 0 12 2" stroke="#E2B740" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-        <path d="M8 24c6-2 10-2 12-2s6 0 12 2" stroke="#9FC3A8" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-        <path d="M20 21V9m0 0c-4 0-6 3-6 6 3 0 6-2 6-6zm0 4c4 0 6 2 6 5-3 0-6-1-6-5z" stroke="#F2F5EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect width="40" height="40" rx="8" fill="#2A5A3A"/>
+        <path d="M8 30c6-2 10-2 12-2s6 0 12 2" stroke="#E08A5A" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M8 24c6-2 10-2 12-2s6 0 12 2" stroke="#A9C4AE" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M20 21V9m0 0c-4 0-6 3-6 6 3 0 6-2 6-6zm0 4c4 0 6 2 6 5-3 0-6-1-6-5z" stroke="#F5F3EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       Lesego Laka Projects
     </a>
