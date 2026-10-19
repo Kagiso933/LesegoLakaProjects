@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Lesego Laka Projects: facilities maintenance, grounds and landscaping, agriculture and supply services across Gauteng.">
+<title>Lesego Laka Projects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: planted-rows hero band, then alternating field/soil sections; one column on phones */
+:root{
+  --bg:#F2F5EE; --surface:#FFFFFF; --ink:#16241B; --muted:#55665B;
+  --green:#1E5A36; --green-deep:#123A23; --sage:#DCE7D6; --maize:#B98A12; --line:#C9D6C4;
+  --on-green:#F2F5EE;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1712; --surface:#15221A; --ink:#E6EEE5; --muted:#9DB0A2;
+  --green:#5DBB7E; --green-deep:#0B2416; --sage:#1C2E22; --maize:#E2B740; --line:#2A3D30;
+  --on-green:#E6EEE5; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1712; --surface:#15221A; --ink:#E6EEE5; --muted:#9DB0A2;
+  --green:#5DBB7E; --green-deep:#0B2416; --sage:#1C2E22; --maize:#E2B740; --line:#2A3D30;
+  --on-green:#E6EEE5; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);line-height:1.1;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--maize);outline-offset:3px}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--green-deep)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--green-deep);color:var(--on-green)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.1rem;color:#F2F5EE}
+.mark{width:34px;height:34px;flex:none}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.92rem;color:#CFE0CF}
+nav a:hover{color:#FFFFFF}
+
+/* hero */
+.hero{position:relative;background:var(--green-deep);color:#F2F5EE;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;
+  background:repeating-linear-gradient(170deg,transparent 0 22px,rgba(185,138,18,.18) 22px 24px);
+  -webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;padding-block:72px 88px;display:grid;gap:28px}
+.hero h1{font-size:clamp(2.3rem,6vw,4.2rem);font-weight:800;max-width:15ch;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:#E2B740}
+.hero p.lead{font-size:1.12rem;max-width:58ch;color:#CFE0CF}
+.hero .eyebrow{color:#9FC3A8}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:600}
+.btn-maize{background:#E2B740;color:#16241B}
+.btn-maize:hover{background:#F0C95A}
+.btn-ghost{border-color:#5E8C6B;color:#F2F5EE;background:transparent}
+.btn-ghost:hover{border-color:#F2F5EE}
+.area{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.area span{font-family:var(--f-mono);font-size:.8rem;padding:4px 10px;border:1px solid #3F6B4C;border-radius:999px;color:#CFE0CF}
+
+/* sections */
+section{padding-block:72px}
+.sec-head{display:grid;gap:10px;margin-bottom:36px;max-width:62ch}
+.sec-head h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:700}
+.sec-head p{color:var(--muted)}
+
+.services{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:26px;display:grid;gap:14px;align-content:start}
+.svc-top{display:flex;align-items:center;gap:12px}
+.svc-icon{width:40px;height:40px;border-radius:8px;background:var(--sage);display:grid;place-items:center;flex:none}
+.svc-icon svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:1.3rem;font-weight:700}
+.svc p{color:var(--muted)}
+.svc ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.svc li{font-size:.85rem;padding:3px 10px;border-radius:999px;background:var(--sage);color:var(--ink)}
+.svc .tag{font-family:var(--f-mono);font-size:.76rem;color:var(--maize);letter-spacing:.04em}
+
+/* buyers band */
+.band{background:var(--sage)}
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;border-top:2px solid var(--green)}
+.step{padding:18px 16px 0 0;display:grid;gap:6px;align-content:start}
+.step b{font-family:var(--f-mono);font-size:.8rem;color:var(--green);font-weight:500}
+.step h3{font-size:1.05rem;font-weight:700}
+.step p{font-size:.9rem;color:var(--muted)}
+.compliance{margin-top:44px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.doc{background:var(--surface);border-radius:8px;padding:16px;display:grid;gap:4px;border:1px solid var(--line)}
+.doc span{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.doc strong{font-size:.98rem}
+
+/* work */
+.work{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+.work-empty{border:2px dashed var(--line);border-radius:10px;padding:32px;display:grid;gap:12px;background:var(--surface)}
+.work-empty h3{font-size:1.25rem}
+.work-empty p{color:var(--muted)}
+.ig{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--green);text-decoration:none}
+.ig:hover{text-decoration:underline}
+.farm{display:grid;gap:14px}
+.farm .row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.farm .row span:first-child{color:var(--muted)}
+.farm .row span:last-child{font-weight:600;text-align:right}
+
+/* quote */
+.quote{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start}
+form{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;display:grid;gap:16px}
+.field{display:grid;gap:6px;min-width:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-weight:600;font-size:.9rem}
+input,select,textarea{font:inherit;padding:10px 12px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:96px;resize:vertical}
+.btn-green{background:var(--green);color:var(--bg)}
+.btn-green:hover{filter:brightness(1.08)}
+.out{display:grid;gap:10px}
+.out pre{white-space:pre-wrap;font-family:var(--f-mono);font-size:.85rem;background:var(--sage);padding:14px;border-radius:6px;margin:0;user-select:all}
+.note{font-size:.85rem;color:var(--muted)}
+
+footer{background:var(--green-deep);color:#CFE0CF}
+footer .wrap{padding-block:36px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.9rem}
+footer strong{color:#F2F5EE;font-family:var(--f-display)}
+
+@media (max-width:860px){
+  .services,.work,.quote{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;row-gap:20px}
+  .compliance{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .steps,.compliance,.two{grid-template-columns:1fr}
+  nav{display:none}
+  section{padding-block:52px}
+  .hero .wrap{padding-block:52px 64px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .btn,nav a{transition:background .15s,border-color .15s,color .15s}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Lesego Laka Projects home">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="8" fill="#1E5A36"/>
+        <path d="M8 30c6-2 10-2 12-2s6 0 12 2" stroke="#E2B740" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M8 24c6-2 10-2 12-2s6 0 12 2" stroke="#9FC3A8" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M20 21V9m0 0c-4 0-6 3-6 6 3 0 6-2 6-6zm0 4c4 0 6 2 6 5-3 0-6-1-6-5z" stroke="#F2F5EE" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Lesego Laka Projects
+    </a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#buyers">For buyers</a>
+      <a href="#work">Our work</a>
+      <a href="#quote">Request a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Facilities &amp; agri services · Gauteng</p>
+      <h1>We look after the <em>ground</em> and everything built on it.</h1>
+      <p class="lead">Lesego Laka Projects maintains buildings and grounds, clears and landscapes sites, supplies goods to public and private buyers, and farms livestock and crops. One accountable team from the first site visit to the close-out report.</p>
+      <div class="cta-row">
+        <a class="btn btn-maize" href="#quote">Request a quote</a>
+        <a class="btn btn-ghost" href="#buyers">Procurement documents</a>
+      </div>
+      <div class="area" aria-label="Service area">
+        <span>Tshwane</span><span>Johannesburg</span><span>Ekurhuleni</span><span>West Rand</span><span>Sedibeng</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What we do</p>
+        <h2>Four service lines, one team on the ground</h2>
+        <p>The same crews, vehicles and equipment move between maintenance, grounds and farm work, which keeps our rates sharp and our response times short.</p>
+      </div>
+      <div class="services">
+        <article class="svc">
+          <div class="svc-top">
+            <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6"/></svg></div>
+            <h3>Facilities maintenance</h3>
+          </div>
+          <p>Planned and reactive maintenance for schools, clinics, offices and residential complexes.</p>
+          <ul><li>Interior &amp; exterior painting</li><li>Paving &amp; kerbing</li><li>Minor building repairs</li><li>Gutters &amp; roofs</li></ul>
+          <span class="tag">Priced per m² or per call-out</span>
+        </article>
+        <article class="svc">
+          <div class="svc-top">
+            <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 21v-8M12 13c-4 0-7-3-7-8 4 0 7 3 7 8zM12 13c4 0 7-3 7-8-4 0-7 3-7 8zM4 21h16"/></svg></div>
+            <h3>Grounds &amp; landscaping</h3>
+          </div>
+          <p>Keeping public and commercial grounds safe, tidy and usable all year round.</p>
+          <ul><li>Grass cutting contracts</li><li>Landscaping &amp; irrigation</li><li>Bush &amp; alien vegetation clearing</li><li>Site clean-ups</li></ul>
+          <span class="tag">Monthly contracts or once-off jobs</span>
+        </article>
+        <article class="svc">
+          <div class="svc-top">
+            <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 18c3-1 6-1 9-1s6 0 9 1M3 13c3-1 6-1 9-1s6 0 9 1M8 9a4 4 0 0 1 8 0"/></svg></div>
+            <h3>Agriculture</h3>
+          </div>
+          <p>Livestock and crop production in Gauteng, with fodder grown on our own land.</p>
+          <ul><li>Goats &amp; sheep</li><li>Pigs</li><li>Fodder crops</li><li>Seasonal vegetables</li></ul>
+          <span class="tag">Supply to caterers, schools &amp; buyers</span>
+        </article>
+        <article class="svc">
+          <div class="svc-top">
+            <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10"/></svg></div>
+            <h3>Supply &amp; procurement</h3>
+          </div>
+          <p>Sourcing and delivery of non-IT goods for departments, municipalities and businesses.</p>
+          <ul><li>PPE &amp; workwear</li><li>Cleaning materials</li><li>Garden &amp; farm supplies</li><li>General consumables</li></ul>
+          <span class="tag">Quoted against your RFQ spec</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="buyers" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">For procurement officers</p>
+        <h2>How a job runs with us</h2>
+        <p>We respond to RFQs and formal tenders, and to direct requests from private clients.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01</b><h3>RFQ or request</h3><p>We confirm scope, site and closing date within one working day.</p></div>
+        <div class="step"><b>02</b><h3>Site visit</h3><p>We attend briefings and measure the site ourselves.</p></div>
+        <div class="step"><b>03</b><h3>Priced quote</h3><p>Itemised, VAT-clear, with all compliance documents attached.</p></div>
+        <div class="step"><b>04</b><h3>Delivery</h3><p>Named supervisor on site and weekly progress photos.</p></div>
+        <div class="step"><b>05</b><h3>Close-out</h3><p>Completion report, before-and-after photos, invoice.</p></div>
+      </div>
+      <div class="compliance" aria-label="Compliance documents">
+        <div class="doc"><span>National Treasury</span><strong>CSD registration</strong></div>
+        <div class="doc"><span>SARS</span><strong>Tax compliance PIN</strong></div>
+        <div class="doc"><span>B-BBEE</span><strong>EME sworn affidavit</strong></div>
+        <div class="doc"><span>CIDB</span><strong>Contractor grading</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap work">
+      <div class="work-empty">
+        <p class="eyebrow">Recent work</p>
+        <h3>Project photos are on Instagram</h3>
+        <p>Painting, paving and landscaping jobs, with before-and-after photos. A full project gallery is coming to this page.</p>
+        <a class="ig" href="https://www.instagram.com/lesegolakaprojects" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          @lesegolakaprojects
+        </a>
+      </div>
+      <div class="farm">
+        <p class="eyebrow">The farm</p>
+        <h3 style="font-size:1.4rem">Building a mixed livestock and crop operation in Gauteng</h3>
+        <div class="row"><span>Livestock</span><span>Goats, sheep, pigs</span></div>
+        <div class="row"><span>Crops</span><span>Fodder &amp; vegetables</span></div>
+        <div class="row"><span>Target land</span><span>25–40 ha leased</span></div>
+        <div class="row"><span>Approach</span><span>Biosecure, manure back to fields</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap quote">
+      <div class="sec-head" style="margin-bottom:0">
+        <p class="eyebrow">Request a quote</p>
+        <h2>Tell us about the job</h2>
+        <p>Fill in the details and copy the summary into an email or WhatsApp message to us. Include the RFQ number if you are a public buyer.</p>
+      </div>
+      <form id="qform" novalidate>
+        <div class="two">
+          <div class="field"><label for="q-name">Your name</label><input id="q-name" autocomplete="name" value="Thandi Mokoena"></div>
+          <div class="field"><label for="q-org">Organisation</label><input id="q-org" value="Example Primary School"></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="q-service">Service</label>
+            <select id="q-service">
+              <option selected>Facilities maintenance</option>
+              <option>Grounds &amp; landscaping</option>
+              <option>Agriculture / livestock supply</option>
+              <option>Supply &amp; procurement</option>
+            </select></div>
+          <div class="field"><label for="q-area">Area</label>
+            <select id="q-area">
+              <option>Tshwane</option><option>Johannesburg</option><option selected>Ekurhuleni</option><option>West Rand</option><option>Sedibeng</option>
+            </select></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="q-rfq">RFQ / tender number (optional)</label><input id="q-rfq" value="RFQ-2026-0412"></div>
+          <div class="field"><label for="q-date">Closing or start date</label><input id="q-date" type="date" value="2026-11-06"></div>
+        </div>
+        <div class="field"><label for="q-scope">Scope of work</label><textarea id="q-scope">Repaint 6 classrooms (approx. 480 m² walls) and repair paving at the main entrance.</textarea></div>
+        <p class="note">Sample details shown. Replace them with your own.</p>
+        <button class="btn btn-green" type="submit">Create request summary</button>
+        <div class="out" id="out" hidden>
+          <pre id="summary"></pre>
+          <div class="cta-row"><button class="btn btn-green" type="button" id="copy">Copy summary</button><span class="note" id="copied" aria-live="polite"></span></div>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Lesego Laka Projects</strong><br>Facilities, grounds, agriculture &amp; supply · Gauteng</div>
+    <div>Instagram: <a href="https://www.instagram.com/lesegolakaprojects" target="_blank" rel="noopener">@lesegolakaprojects</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const f=document.getElementById('qform'),out=document.getElementById('out'),pre=document.getElementById('summary'),msg=document.getElementById('copied');
+  const v=id=>document.getElementById(id).value.trim();
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const lines=[
+      'Quote request: Lesego Laka Projects',
+      'Name: '+(v('q-name')||'-'),
+      'Organisation: '+(v('q-org')||'-'),
+      'Service: '+v('q-service'),
+      'Area: '+v('q-area'),
+      'RFQ / tender no: '+(v('q-rfq')||'n/a'),
+      'Closing / start date: '+(v('q-date')||'-'),
+      'Scope: '+(v('q-scope')||'-')
+    ];
+    pre.textContent=lines.join('\n');out.hidden=false;msg.textContent='';
+  });
+  document.getElementById('copy').addEventListener('click',()=>{
+    navigator.clipboard.writeText(pre.textContent).then(()=>{msg.textContent='Copied';})
+    .catch(()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);msg.textContent='Selected. Press copy on your device.';});
+  });
+})();
+</script>
+</body>
+</html>
