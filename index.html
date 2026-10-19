@@ -12,23 +12,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: planted-rows hero band, then alternating field/soil sections; one column on phones */
+/* Layout: light cream-and-mint header and hero with clay field rows; deep veld green kept for text, buttons and the footer */
 :root{
-  --bg:#F5F3EE; --surface:#FFFFFF; --ink:#16241B; --muted:#55665B;
-  --green:#1E5A36; --green-deep:#173B27; --sage:#EFE7DC; --maize:#A4532B; --line:#DDD6CA;
-  --on-green:#F5F3EE;
+  --bg:#FAF4EA; --surface:#FFFFFF; --ink:#13261A; --muted:#55665B;
+  --green:#1B6B3D; --green-deep:#0E3D24; --sage:#E3F2E7; --maize:#C24E17; --clay:#E2622A; --line:#E6DCC9;
+  --title:#0E3D24; --hero-a:#FFFFFF; --hero-b:#E3F2E7; --rows:rgba(226,98,42,.22); --chip-line:#B9DCC4;
+  --on-green:#FAF4EA;
   --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --f-body:"Public Sans", "Segoe UI", system-ui, sans-serif;
   --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E1712; --surface:#15221A; --ink:#E6EEE5; --muted:#9DB0A2;
-  --green:#5DBB7E; --green-deep:#0B2416; --sage:#2A241D; --maize:#E08A5A; --line:#2A3D30;
-  --on-green:#E6EEE5; color-scheme:dark}}
+  --bg:#0C1611; --surface:#13221A; --ink:#E6F0E8; --muted:#9DB5A4;
+  --green:#7FD49C; --green-deep:#082A18; --sage:#1A3324; --maize:#FF8A4C; --clay:#E2622A; --line:#24402F;
+  --title:#F2F8F3; --hero-a:#0F2A1C; --hero-b:#14402A; --rows:rgba(255,138,76,.22); --chip-line:#2F5A40;
+  --on-green:#E6F0E8; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0E1712; --surface:#15221A; --ink:#E6EEE5; --muted:#9DB0A2;
-  --green:#5DBB7E; --green-deep:#0B2416; --sage:#2A241D; --maize:#E08A5A; --line:#2A3D30;
-  --on-green:#E6EEE5; color-scheme:dark}
+  --bg:#0C1611; --surface:#13221A; --ink:#E6F0E8; --muted:#9DB5A4;
+  --green:#7FD49C; --green-deep:#082A18; --sage:#1A3324; --maize:#FF8A4C; --clay:#E2622A; --line:#24402F;
+  --title:#F2F8F3; --hero-a:#0F2A1C; --hero-b:#14402A; --rows:rgba(255,138,76,.22); --chip-line:#2F5A40;
+  --on-green:#E6F0E8; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
@@ -36,37 +39,37 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);fo
 h1,h2,h3{font-family:var(--f-display);line-height:1.1;text-wrap:balance;margin:0}
 p{margin:0}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--maize);outline-offset:3px}
+:focus-visible{outline:3px solid var(--clay);outline-offset:3px}
 .eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
 /* header */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--green-deep)}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--green-deep);color:var(--on-green)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--surface)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--surface);color:var(--ink);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.1rem;color:#F5F3EE}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.1rem;color:var(--title)}
 .mark{width:34px;height:34px;flex:none}
 nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{text-decoration:none;font-size:.92rem;color:#D3DED2}
-nav a:hover{color:#FFFFFF}
+nav a{text-decoration:none;font-size:.92rem;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--maize)}
 
 /* hero */
-.hero{position:relative;background:var(--green-deep);color:#F5F3EE;overflow:hidden}
+.hero{position:relative;background:linear-gradient(160deg,var(--hero-a) 0%,var(--hero-b) 100%);color:var(--ink);overflow:hidden}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;
-  background:repeating-linear-gradient(170deg,transparent 0 22px,rgba(196,104,58,.24) 22px 24px);
+  background:repeating-linear-gradient(170deg,transparent 0 22px,var(--rows) 22px 24px);
   -webkit-mask-image:linear-gradient(to top,#000,transparent);mask-image:linear-gradient(to top,#000,transparent);pointer-events:none}
 .hero .wrap{position:relative;z-index:1;padding-block:72px 88px;display:grid;gap:28px}
-.hero h1{font-size:clamp(2.3rem,6vw,4.2rem);font-weight:800;max-width:15ch;letter-spacing:-.02em}
-.hero h1 em{font-style:normal;color:#E08A5A}
-.hero p.lead{font-size:1.12rem;max-width:58ch;color:#D3DED2}
-.hero .eyebrow{color:#A9C4AE}
+.hero h1{font-size:clamp(2.3rem,6vw,4.2rem);font-weight:800;max-width:15ch;letter-spacing:-.02em;color:var(--title)}
+.hero h1 em{font-style:normal;color:var(--clay)}
+.hero p.lead{font-size:1.12rem;max-width:58ch;color:var(--muted)}
+.hero .eyebrow{color:var(--green)}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:600}
-.btn-maize{background:#C4683A;color:#FFFFFF}
-.btn-maize:hover{background:#D47848}
-.btn-ghost{border-color:#6B8F74;color:#F5F3EE;background:transparent}
-.btn-ghost:hover{border-color:#F5F3EE}
+.btn-maize{background:var(--clay);color:#FFFFFF}
+.btn-maize:hover{background:#C9531F}
+.btn-ghost{border-color:var(--green);color:var(--green);background:transparent}
+.btn-ghost:hover{background:var(--sage)}
 .area{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
-.area span{font-family:var(--f-mono);font-size:.8rem;padding:4px 10px;border:1px solid #3F6B4C;border-radius:999px;color:#D3DED2}
+.area span{font-family:var(--f-mono);font-size:.8rem;padding:4px 10px;border:1px solid var(--chip-line);border-radius:999px;color:var(--green);background:var(--surface)}
 
 /* sections */
 section{padding-block:72px}
@@ -125,7 +128,7 @@ textarea{min-height:96px;resize:vertical}
 
 footer{background:var(--green-deep);color:#D3DED2}
 footer .wrap{padding-block:36px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.9rem}
-footer strong{color:#F5F3EE;font-family:var(--f-display)}
+footer strong{color:#FAF4EA;font-family:var(--f-display)}
 
 @media (max-width:860px){
   .services,.work,.quote{grid-template-columns:1fr}
@@ -148,7 +151,7 @@ footer strong{color:#F5F3EE;font-family:var(--f-display)}
 <header>
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Lesego Laka Projects home">
-      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 8h13v35h35v13H8z" fill="#A9C4AE"/><path d="M56 56H43V21H8V8h48z" fill="#C4683A"/><path d="M32 40V28m0 0c-4 0-6-2.6-6-6.4 4 0 6 2.6 6 6.4zm0 4c3.6 0 5.6-2.2 5.6-5.6-3.6 0-5.6 2.2-5.6 5.6z" fill="none" stroke="#A9C4AE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 8h13v35h35v13H8z" style="fill:var(--green)"/><path d="M56 56H43V21H8V8h48z" style="fill:var(--clay)"/><path d="M32 40V28m0 0c-4 0-6-2.6-6-6.4 4 0 6 2.6 6 6.4zm0 4c3.6 0 5.6-2.2 5.6-5.6-3.6 0-5.6 2.2-5.6 5.6z" fill="none" style="stroke:var(--green)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Lesego Laka Projects
     </a>
     <nav aria-label="Main">
