@@ -22,5 +22,5 @@ Logo files are in `brand/`:
 - `social-profile-1080.png` – Instagram / WhatsApp profile picture
 - `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` – browser and phone icons
 
-Colours: Veld `#173B27`, Leaf `#2A5A3A`, Red Soil `#C4683A`, Sage `#A9C4AE`, Sand `#EFE7DC`, Lime `#F5F3EE`.
+Colours: Deep Veld `#0E3D24`, Leaf `#1B6B3D`, Clay `#E2622A`, Mint `#7FD49C` (on dark), Mint tint `#E3F2E7`, Cream `#FAF4EA`.
 Typefaces: Bricolage Grotesque (headings), Public Sans (body), IBM Plex Mono (labels).
