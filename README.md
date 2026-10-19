@@ -14,3 +14,13 @@ Company website for Lesego Laka Projects: facilities maintenance, grounds and la
 - Confirm the compliance documents listed in the "For buyers" section (CSD, tax PIN, B-BBEE, CIDB).
 - Add email and phone contact details.
 - Replace the "Recent work" placeholder with project photos.
+
+## Brand
+Logo files are in `brand/`:
+- `lockup-*.svg` / `.png` – logo with company name (colour for light backgrounds, reversed for dark, black, white)
+- `mark-*.svg` / `.png` – symbol only
+- `social-profile-1080.png` – Instagram / WhatsApp profile picture
+- `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` – browser and phone icons
+
+Colours: Veld `#173B27`, Leaf `#2A5A3A`, Red Soil `#C4683A`, Sage `#A9C4AE`, Sand `#EFE7DC`, Lime `#F5F3EE`.
+Typefaces: Bricolage Grotesque (headings), Public Sans (body), IBM Plex Mono (labels).
