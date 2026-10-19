@@ -8,7 +8,7 @@ Company website for Lesego Laka Projects: facilities maintenance, grounds and la
 
 ## Hosting on GitHub Pages
 1. Settings → Pages → Source: **Deploy from a branch**, branch `main`, folder `/ (root)`.
-2. Add a `CNAME` file containing the company domain, and point the domain's DNS at GitHub Pages.
+2. The custom domain is set in `CNAME` (lesegolakaprojects.co.za). DNS: four A records on the apex to 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153, and a CNAME for `www` to `kagiso933.github.io`.
 
 ## Before going live
 - Confirm the compliance documents listed in the "For buyers" section (CSD, tax PIN, B-BBEE, CIDB).
